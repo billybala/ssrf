@@ -57,8 +57,8 @@ ssrf/
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/USUARIO/ssrf-fastapi-poc.git
-cd ssrf-fastapi-poc
+git clone https://github.com/billybala/ssrf.git
+cd ssrf
 ```
 
 ### 2️⃣ Levantar el servicio interno (Docker)
