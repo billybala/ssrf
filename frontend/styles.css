@@ -1,0 +1,194 @@
+:root {
+  --bg: #0b1020;
+  --card: #121a33;
+  --text: #e7eaf3;
+  --muted: #aab1c7;
+  --border: rgba(255, 255, 255, 0.08);
+
+  --danger: #ff4d4f;
+  --success: #2ecc71;
+  --secondary: #5b7cfa;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background:
+    radial-gradient(
+      1000px 600px at 20% 10%,
+      rgba(91, 124, 250, 0.25),
+      transparent
+    ),
+    radial-gradient(
+      1000px 600px at 80% 20%,
+      rgba(46, 204, 113, 0.18),
+      transparent
+    ),
+    var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 18px 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: 0.2px;
+}
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.card {
+  margin-top: 18px;
+  padding: 16px;
+  background: rgba(18, 26, 51, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.row-gap {
+  margin-top: 12px;
+}
+.row-space {
+  justify-content: space-between;
+}
+
+.input {
+  flex: 1 1 380px;
+  min-width: 260px;
+  padding: 12px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  outline: none;
+}
+.input:focus {
+  border-color: rgba(91, 124, 250, 0.65);
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  padding: 11px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.04s ease,
+    filter 0.12s ease;
+  user-select: none;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn-danger {
+  background: rgba(255, 77, 79, 0.16);
+  border-color: rgba(255, 77, 79, 0.3);
+}
+.btn-success {
+  background: rgba(46, 204, 113, 0.14);
+  border-color: rgba(46, 204, 113, 0.28);
+}
+.btn-secondary {
+  background: rgba(91, 124, 250, 0.14);
+  border-color: rgba(91, 124, 250, 0.28);
+}
+.btn-ghost {
+  background: transparent;
+}
+
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.hint ul {
+  margin: 8px 0 0 18px;
+}
+
+.meta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  margin: 10px 0 10px;
+  font-size: 14px;
+}
+.metaKey {
+  color: rgba(231, 234, 243, 0.7);
+}
+
+.output {
+  margin: 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.25);
+  overflow: auto;
+  min-height: 180px;
+  line-height: 1.35;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+}
+.hidden {
+  display: none;
+}
+
+.footer {
+  margin-top: 18px;
+  color: var(--muted);
+  text-align: center;
+}
+code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.95em;
+}

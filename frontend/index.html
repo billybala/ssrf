@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SSRF PoC (FastAPI)</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>SSRF PoC</h1>
+        <p class="subtitle">
+          Prueba visual de <code>/fetch-vuln</code> vs
+          <code>/fetch-safe</code> (FastAPI)
+        </p>
+      </header>
+
+      <section class="card">
+        <label for="urlInput" class="label">URL a solicitar</label>
+        <div class="row">
+          <input
+            id="urlInput"
+            class="input"
+            type="text"
+            placeholder="https://example.com"
+          />
+          <button id="btnInternal" class="btn btn-secondary" type="button">
+            Usar URL interna
+          </button>
+          <button id="btnExternal" class="btn btn-secondary" type="button">
+            Usar URL externa
+          </button>
+        </div>
+
+        <div class="row row-gap">
+          <button id="btnVuln" class="btn btn-danger" type="button">
+            Probar vulnerable
+          </button>
+          <button id="btnSafe" class="btn btn-success" type="button">
+            Probar mitigado
+          </button>
+          <button id="btnClear" class="btn btn-ghost" type="button">
+            Limpiar
+          </button>
+        </div>
+
+        <div class="hint">
+          <strong>Tips para la demo:</strong>
+          <ul>
+            <li>
+              La URL interna típica (en Docker) es
+              <code>http://internal_service:5000/admin/secret</code>
+            </li>
+            <li>
+              La externa permitida puede ser <code>https://example.com</code>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row row-space">
+          <h2>Resultado</h2>
+          <div id="loading" class="badge hidden">Cargando…</div>
+        </div>
+
+        <div class="meta">
+          <div>
+            <span class="metaKey">Endpoint:</span>
+            <span id="metaEndpoint">—</span>
+          </div>
+          <div>
+            <span class="metaKey">HTTP:</span> <span id="metaHttp">—</span>
+          </div>
+        </div>
+
+        <pre id="output" class="output">
+Introduce una URL y pulsa uno de los botones.</pre
+        >
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

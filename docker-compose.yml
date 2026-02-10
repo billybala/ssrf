@@ -1,0 +1,5 @@
+services:
+  internal_service:
+    build: ./internal_service
+    ports:
+      - "5001:5000" # host:contenedor
