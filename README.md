@@ -1,4 +1,4 @@
-# SSRF Proof of Concept con FastAPI
+# SSRF con FastAPI
 
 Este proyecto demuestra una vulnerabilidad del tipo **Server-Side Request Forgery (SSRF)** y su mitigación utilizando **FastAPI**.  
 Incluye un backend vulnerable y corregido, un servicio interno simulado y un frontend básico para probar visualmente el ataque.
@@ -21,6 +21,7 @@ Incluye un backend vulnerable y corregido, un servicio interno simulado y un fro
 ---
 
 ## 📂 Estructura de carpetas
+
 ```
 ssrf/
 │
@@ -42,6 +43,7 @@ ssrf/
 ├── docker-compose.yml
 └── README.md
 ```
+
 ---
 
 ## ⚙️ Requisitos
