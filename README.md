@@ -21,7 +21,7 @@ Incluye un backend vulnerable y corregido, un servicio interno simulado y un fro
 ---
 
 ## 📂 Estructura de carpetas
-
+```
 ssrf/
 │
 ├── backend/
@@ -41,12 +41,12 @@ ssrf/
 │
 ├── docker-compose.yml
 └── README.md
-
+```
 ---
 
 ## ⚙️ Requisitos
 
-- Python 3.11 o 3.12 (recomendado)
+- Python
 - Docker y Docker Compose
 - Navegador web moderno
 
@@ -57,8 +57,8 @@ ssrf/
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/USUARIO/ssrf-fastapi-poc.git
-cd ssrf-fastapi-poc
+git clone https://github.com/billybala/ssrf.git
+cd ssrf
 ```
 
 ### 2️⃣ Levantar el servicio interno (Docker)
