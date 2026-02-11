@@ -7,7 +7,7 @@ from .ssrf import safe_fetch
 # Generate basic FastAPI application
 app = FastAPI(title="SSRF PoC (Vulnerable + Fixed)")
 
-
+# Middleware que evita errores de CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:8080", "http://127.0.0.1:8080", "*"],
@@ -16,11 +16,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Endpoint principal
+# Endpoint vulnerable
 @app.get("/fetch-vuln")
 async def fetch_vuln(url: str = Query(..., description="URL a solicitar (vulnerable)")):
     # SSRF: no validación, permite acceder a recursos internos
-    
     try:
         r = requests.get(url, timeout=5)
         return {
@@ -32,6 +31,7 @@ async def fetch_vuln(url: str = Query(..., description="URL a solicitar (vulnera
     except requests.RequestException as e:
         raise HTTPException(status_code=502, detail=f"Upstream error: {e}")
 
+# Endpoint seguro
 @app.get("/fetch-safe")
 def fetch_safe(url: str = Query(..., description="URL a solicitar (mitigado)")):
     try:

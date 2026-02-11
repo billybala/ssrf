@@ -15,6 +15,8 @@ const metaHttp = document.getElementById("metaHttp");
 const INTERNAL_URL = "http://127.0.0.1:5001/admin/secret";
 const EXTERNAL_URL = "https://example.com";
 
+// Función que deshabilita los botones mientras la llamada está en curso y
+// los vuelve a habilitar cuando finaliza.
 function setLoading(isLoading) {
   loading.classList.toggle("hidden", !isLoading);
   btnVuln.disabled = isLoading;
@@ -24,6 +26,8 @@ function setLoading(isLoading) {
   btnClear.disabled = isLoading;
 }
 
+// Función que decodifica el mensaje que se le pasa por parámetro para devolverlo
+// como un JSON entendible para un humano.
 function pretty(obj) {
   return JSON.stringify(obj, null, 2);
 }
@@ -33,6 +37,8 @@ function setMeta(endpoint, httpText) {
   metaHttp.textContent = httpText ?? "—";
 }
 
+// Función que se encarga de llamar al endpoint juntando el path y la url objetivo
+// que se le pasan por parámetro.
 async function callEndpoint(path, targetUrl) {
   if (!targetUrl || !targetUrl.trim()) {
     output.textContent = "⚠️ Introduce una URL primero.";
@@ -65,6 +71,7 @@ async function callEndpoint(path, targetUrl) {
   }
 }
 
+// EVENTOS DE LOS BOTONES
 btnInternal.addEventListener("click", () => {
   urlInput.value = INTERNAL_URL;
 });
